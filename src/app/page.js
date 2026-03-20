@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useCallback, useEffect } from 'react'
-import { CHARACTERS, VILLES } from './data'
+import { CHARACTERS, VILLES, VIMANAS, LIEUX, ARMES } from './data'
 
 const POLL_INTERVAL = 3000
 const MAX_POLLS = 60
@@ -54,7 +54,7 @@ export default function Page() {
     setApiKey(key)
   }
 
-  const entities = phase === 'characters' ? CHARACTERS : VILLES
+  const entities = { characters: CHARACTERS, villes: VILLES, vimanas: VIMANAS, lieux: LIEUX, armes: ARMES }[phase] || CHARACTERS
   const totalImages = entities.reduce((acc, e) => acc + e.images.length, 0)
   const generatedInPhase = entities.reduce((acc, e) => {
     return acc + e.images.filter(img => images[img.id]).length
@@ -260,9 +260,16 @@ export default function Page() {
         </div>
 
         {/* Phase selector */}
-        <div style={{ display: 'flex', gap: 4 }}>
-          <button style={styles.phaseBtn(phase === 'characters')} onClick={() => setPhase('characters')}>PERSO</button>
-          <button style={styles.phaseBtn(phase === 'villes')} onClick={() => setPhase('villes')}>VILLES</button>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+          <div style={{ display: 'flex', gap: 4 }}>
+            <button style={styles.phaseBtn(phase === 'characters')} onClick={() => setPhase('characters')}>PERSO</button>
+            <button style={styles.phaseBtn(phase === 'villes')} onClick={() => setPhase('villes')}>VILLES</button>
+          </div>
+          <div style={{ display: 'flex', gap: 4 }}>
+            <button style={styles.phaseBtn(phase === 'vimanas')} onClick={() => setPhase('vimanas')}>VIMANAS</button>
+            <button style={styles.phaseBtn(phase === 'lieux')} onClick={() => setPhase('lieux')}>LIEUX</button>
+          </div>
+          <button style={{ ...styles.phaseBtn(phase === 'armes'), width: '100%' }} onClick={() => setPhase('armes')}>ARMES</button>
         </div>
 
         {/* Stats */}
