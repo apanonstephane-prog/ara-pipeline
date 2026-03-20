@@ -121,15 +121,13 @@ export default function Page() {
     }
   }, [])
 
-  const validateRef = useCallback((entityId, imgId) => {
-    setImages(prev => {
-      const url = prev[imgId]
-      if (!url) return prev
-      const newRefs = { ...refsRef.current, [entityId]: url }
-      syncRefs(newRefs)
-      addLog(setLogs, `✓ Référence ${entityId} validée`, 'success')
-      return prev
-    })
+  // Reçoit l'url directement depuis le call site — pas de lecture de state dans un updater
+  const validateRef = useCallback((entityId, url) => {
+    if (!url) return
+    const newRefs = { ...refsRef.current, [entityId]: url }
+    refsRef.current = newRefs
+    setRefs(newRefs)
+    addLog(setLogs, `✓ Référence ${entityId} validée`, 'success')
   }, [])
 
   const resetImage = useCallback((entityId, imgId, isRef, prompt, ratio, imgIsRef) => {
@@ -422,7 +420,7 @@ export default function Page() {
                             {img.isRef && isDone && imgUrl && !refValidated && (
                               <button
                                 style={styles.btn('success')}
-                                onClick={() => validateRef(entity.id, img.id)}
+                                onClick={() => validateRef(entity.id, imgUrl)}
                               >
                                 ✓ VALIDER
                               </button>
