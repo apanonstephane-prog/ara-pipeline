@@ -5,7 +5,7 @@ export async function POST(request) {
     if (!apiKey) return Response.json({ error: 'Clé API manquante' }, { status: 401 })
 
     const input = { prompt, aspect_ratio: ratio, output_format: 'jpg' }
-    if (refUrl) input.image = refUrl
+    if (refUrl) input.image_input = [refUrl]
 
     const res = await fetch('https://api.replicate.com/v1/models/google/nano-banana-pro/predictions', {
       method: 'POST',
