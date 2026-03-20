@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inconsolata:wght@300;400;500&display=swap');
+
+:root {
+  --obsidian: #0e0d0b;
+  --obsidian-mid: #181612;
+  --obsidian-light: #222018;
+  --stone: #c8bfb0;
+  --stone-dark: #8c8070;
+  --gold: #b8963e;
+  --gold-pale: #d4b86a;
+  --ivory: #e8e0d0;
+  --water: #6a8a9a;
+  --success: #6aaa7a;
+  --copper: #7a5c3a;
+  --danger: #c07060;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--obsidian); color: var(--stone); font-family: 'Inconsolata', monospace; min-height: 100vh; }
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-thumb { background: rgba(184,150,62,0.3); }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse-gold { 0%,100%{border-color:rgba(184,150,62,0.2)} 50%{border-color:var(--gold)} }
