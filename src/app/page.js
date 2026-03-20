@@ -283,8 +283,8 @@ export default function Page() {
 
         <div>
           <div style={styles.sideLabel}>Budget estimé</div>
-          <div style={styles.sideValue}>${(generated * 0.04).toFixed(2)}</div>
-          <div style={{ fontSize: 9, color: '#8c8070' }}>{generated} images × $0.04</div>
+          <div style={styles.sideValue}>€{(generated * 0.15).toFixed(2)}</div>
+          <div style={{ fontSize: 9, color: '#8c8070' }}>{generated} images × 0,15€</div>
         </div>
 
         {/* Références validées */}
