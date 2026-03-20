@@ -402,3 +402,340 @@ export const VILLES = [
     ],
   },
 ]
+
+export const VIMANAS = [
+  {
+    id: 'vima-liaison',
+    name: 'LIAISON',
+    role: 'Correspondance et décision rapide',
+    location: 'Ora-Mu / Talar',
+    images: [
+      {
+        id: 'vima-liaison-1',
+        label: 'Vue référence',
+        ratio: '16:9',
+        isRef: true,
+        prompt: `Vimana de liaison ARA. Coque fine longue accordée. Joints précis, matériaux sombres nacrés, anneaux de stabilisation lisibles, membranes de portance discrètes. Vue latérale complète. Berceau minéral Ora-Mu, fond marine. ${BASE_STYLE}`,
+      },
+      {
+        id: 'vima-liaison-2',
+        label: 'En vol',
+        ratio: '16:9',
+        isRef: false,
+        prompt: `Vimana liaison ARA en vol haute altitude. Trajectoire calme souveraine. Ciel clair analytique. Meme vimana que vue reference. ${BASE_STYLE}`,
+      },
+      {
+        id: 'vima-liaison-3',
+        label: 'Arrimage Talar',
+        ratio: '16:9',
+        isRef: false,
+        prompt: `Vimana liaison ARA en arrimage berceau minéral Talar. Rainures accueil, lignes recalibrage. Personnel technique silhouettes. Meme vimana que vue reference. ${BASE_STYLE}`,
+      },
+    ],
+  },
+  {
+    id: 'vima-porteur',
+    name: 'PORTEUR MIXTE',
+    role: 'Transport hommes et matières sensibles',
+    location: 'Ora-Mu / routes hautes',
+    images: [
+      {
+        id: 'vima-porteur-1',
+        label: 'Vue référence',
+        ratio: '16:9',
+        isRef: true,
+        prompt: `Vimana porteur mixte ARA. Ventre large, nervures latérales, stabilité renforcée. Coque sombre nacrée, joints précis, anneaux compartimentés. Vue latérale. Plateforme Ora-Mu falaises marines. ${BASE_STYLE}`,
+      },
+      {
+        id: 'vima-porteur-2',
+        label: 'En vol chargé',
+        ratio: '16:9',
+        isRef: false,
+        prompt: `Vimana porteur mixte ARA en vol chargé. Horizon mer falaises. Coque basse portante. Meme vimana que vue reference. ${BASE_STYLE}`,
+      },
+      {
+        id: 'vima-porteur-3',
+        label: 'Déchargement plateforme',
+        ratio: '16:9',
+        isRef: false,
+        prompt: `Vimana porteur mixte ARA déchargement matières sensibles plateforme d'arrimage. Silhouettes techniques au travail. Meme vimana que vue reference. ${BASE_STYLE}`,
+      },
+    ],
+  },
+  {
+    id: 'vima-surveillance',
+    name: 'SURVEILLANCE FRONTIÈRE',
+    role: 'Observation et contrôle territorial',
+    location: 'Ka-Ur / marges',
+    images: [
+      {
+        id: 'vima-surv-1',
+        label: 'Vue référence',
+        ratio: '16:9',
+        isRef: true,
+        prompt: `Vimana de surveillance frontière ARA. Compact, tactique, accès rapide. Coque sombre mate, profil discret, anneaux minimes. Vue latérale. Crête Ka-Ur pierre rousse lumière sèche. ${BASE_STYLE}`,
+      },
+      {
+        id: 'vima-surv-2',
+        label: 'En vol territoire',
+        ratio: '16:9',
+        isRef: false,
+        prompt: `Vimana surveillance ARA en vol bas territoire frontière. Pierre rousse sable compacté en dessous. Discrétion autorité. Meme vimana que vue reference. ${BASE_STYLE}`,
+      },
+      {
+        id: 'vima-surv-3',
+        label: 'Veille nocturne',
+        ratio: '16:9',
+        isRef: false,
+        prompt: `Vimana surveillance ARA amarré crête Ka-Ur nuit. Ciel étoilé. Gardien silhouette. Meme vimana que vue reference. ${BASE_STYLE}`,
+      },
+    ],
+  },
+  {
+    id: 'vima-altitude',
+    name: 'ALTITUDE / PLATEAU',
+    role: 'Passages trans-chaînes et logistique haute terre',
+    location: 'An-Ka',
+    images: [
+      {
+        id: 'vima-alti-1',
+        label: 'Vue référence',
+        ratio: '16:9',
+        isRef: true,
+        prompt: `Vimana altitude plateau ARA. Structure recalibrée pour chaînes et vents secs. Renforts latéraux, coque pierre chaude gris bleu, anneaux de retenue renforcés. Vue latérale. Berceau lithique An-Ka haut plateau lumière dure. ${BASE_STYLE}`,
+      },
+      {
+        id: 'vima-alti-2',
+        label: 'En vol haute montagne',
+        ratio: '16:9',
+        isRef: false,
+        prompt: `Vimana altitude ARA en vol passages trans-chaînes. Masses rocheuses haute altitude autour. Air sec lumière dure. Meme vimana que vue reference. ${BASE_STYLE}`,
+      },
+      {
+        id: 'vima-alti-3',
+        label: 'Arrimage An-Ka',
+        ratio: '16:9',
+        isRef: false,
+        prompt: `Vimana altitude ARA arrimage berceau lithique An-Ka. Coques renforcées autour. Altitude, lumière oblique sèche. Meme vimana que vue reference. ${BASE_STYLE}`,
+      },
+    ],
+  },
+  {
+    id: 'vima-crise',
+    name: 'VECTEUR DE CRISE',
+    role: 'Charges exceptionnelles — usage doctrinal rare',
+    location: 'Enceintes fermées',
+    images: [
+      {
+        id: 'vima-crise-1',
+        label: 'Vue référence',
+        ratio: '16:9',
+        isRef: true,
+        prompt: `Vimana vecteur de crise ARA. Coque épaisse compartimentée, signes techniques denses gravés, chambres scellées visibles, anneaux de contention. Vue latérale. Enceinte fermée arsenal profond, lumière très rare. ${BASE_STYLE}`,
+      },
+      {
+        id: 'vima-crise-2',
+        label: 'Chambre intérieure',
+        ratio: '16:9',
+        isRef: false,
+        prompt: `Intérieur vimana vecteur de crise ARA. Chambre compartimentée sombre, interfaces scellées, signes techniques gravés, gravité d'installation. Meme vimana que vue reference. ${BASE_STYLE}`,
+      },
+      {
+        id: 'vima-crise-3',
+        label: 'Sortie enceinte',
+        ratio: '16:9',
+        isRef: false,
+        prompt: `Vimana vecteur de crise ARA sortant enceinte fermée. Autorité froide, lenteur souveraine. Portes massives minérales. Meme vimana que vue reference. ${BASE_STYLE}`,
+      },
+    ],
+  },
+]
+
+export const LIEUX = [
+  {
+    id: 'lieu-arrimage',
+    name: 'PLATEFORME D\'ARRIMAGE',
+    role: 'Infrastructure d\'accueil des vimanas',
+    location: 'Ora-Mu',
+    images: [
+      {
+        id: 'lieu-arrimage-1',
+        label: 'Vue ensemble',
+        ratio: '16:9',
+        isRef: true,
+        prompt: `Plateforme d'arrimage ARA. Grande surface pierre noire sombre. Rainures d'accueil, berceaux minéraux, lignes de recalibrage, accès de maintenance. Vimanas en approche. Lumière marine Ora-Mu embruns. ${BASE_STYLE}`,
+      },
+      {
+        id: 'lieu-arrimage-2',
+        label: 'Détail berceau',
+        ratio: '16:9',
+        isRef: false,
+        prompt: `Détail berceau minéral plateforme arrimage ARA. Rainures précises, joints fonctionnels, techniciens silhouettes maintenance. Meme lieu que vue reference. ${BASE_STYLE}`,
+      },
+    ],
+  },
+  {
+    id: 'lieu-bassin',
+    name: 'BASSIN DE RÉGULATION',
+    role: 'Lecture des flux et régulation des masses liquides',
+    location: 'Vara-Ind',
+    images: [
+      {
+        id: 'lieu-bassin-1',
+        label: 'Vue ensemble',
+        ratio: '16:9',
+        isRef: true,
+        prompt: `Bassin de régulation ARA. Gradins, chambres de ralentissement, eau disciplinée gris-bleu. Échange thermique visible. Architectures de retenue minérales. Lumière aube humide Vara-Ind. ${BASE_STYLE}`,
+      },
+      {
+        id: 'lieu-bassin-2',
+        label: 'Vannes minérales',
+        ratio: '16:9',
+        isRef: false,
+        prompt: `Détail vannes minérales bassin régulation ARA. Reflets eau calme disciplinée. Lecture flux, métal sombre lignes fines. Meme lieu que vue reference. ${BASE_STYLE}`,
+      },
+    ],
+  },
+  {
+    id: 'lieu-lecture',
+    name: 'SALLE DE LECTURE',
+    role: 'Analyse systémique et interfaces de décision',
+    location: 'Talar',
+    images: [
+      {
+        id: 'lieu-lecture-1',
+        label: 'Vue ensemble',
+        ratio: '16:9',
+        isRef: true,
+        prompt: `Salle de lecture systémique ARA Talar. Tables d'alignement, reliefs, surfaces gravées, pigments sensibles. Lumière de précision analytique. Opérateurs silhouettes concentrés. ${BASE_STYLE}`,
+      },
+      {
+        id: 'lieu-lecture-2',
+        label: 'Interface tablette',
+        ratio: '16:9',
+        isRef: false,
+        prompt: `Détail tablette minérale active salle de lecture ARA. Surface gravée lumineuse, mains opérateur protocole rigoureux. Meme lieu que vue reference. ${BASE_STYLE}`,
+      },
+    ],
+  },
+  {
+    id: 'lieu-noyau',
+    name: 'NOYAU / CHAMBRE DE CHARGE',
+    role: 'Médiation des contraintes structurelles',
+    location: 'An-Ka',
+    images: [
+      {
+        id: 'lieu-noyau-1',
+        label: 'Vue ensemble',
+        ratio: '16:9',
+        isRef: true,
+        prompt: `Noyau chambre de charge ARA An-Ka. Cœur profond plateau. Anneaux pierre accordée, vides latéraux, médiation contraintes visible. Pierre chaude gris bleu cuivre noirci. Lumière dure rare. ${BASE_STYLE}`,
+      },
+      {
+        id: 'lieu-noyau-2',
+        label: 'Puits axe',
+        ratio: '16:9',
+        isRef: false,
+        prompt: `Puits axe profond noyau ARA An-Ka. Profondeur vertigineuse, anneaux pierre successifs, lumière très rare oblique. Meme lieu que vue reference. ${BASE_STYLE}`,
+      },
+    ],
+  },
+  {
+    id: 'lieu-archive',
+    name: 'ARCHIVE / SALLE DES STRATES',
+    role: 'Conservation de la mémoire et recoupements',
+    location: 'Elen-Ar',
+    images: [
+      {
+        id: 'lieu-archive-1',
+        label: 'Vue ensemble',
+        ratio: '16:9',
+        isRef: true,
+        prompt: `Salle des strates archives ARA Elen-Ar. Tables elliptiques plaques superposées, cylindres archivaux, puits de fraîcheur. Lumière très amortie atmosphère fraîche stratifiée. Pierre pâle ivoire fumé. ${BASE_STYLE}`,
+      },
+      {
+        id: 'lieu-archive-2',
+        label: 'Cylindres archivaux',
+        ratio: '16:9',
+        isRef: false,
+        prompt: `Rangées cylindres archivaux ARA Elen-Ar. Protocole d'accès, mains archiviste, atmosphère calme fraîche profonde. Meme lieu que vue reference. ${BASE_STYLE}`,
+      },
+    ],
+  },
+  {
+    id: 'lieu-seuil',
+    name: 'POSTE DE SEUIL',
+    role: 'Contrôle des passages et distributions',
+    location: 'Ka-Ur',
+    images: [
+      {
+        id: 'lieu-seuil-1',
+        label: 'Vue ensemble',
+        ratio: '16:9',
+        isRef: true,
+        prompt: `Poste de seuil ARA Ka-Ur. Contrôle territorial, citernes, couloirs de ration, structures de passage. Pierre rousse sable compacté métal mat. Lumière sèche poussière vent. ${BASE_STYLE}`,
+      },
+      {
+        id: 'lieu-seuil-2',
+        label: 'Couloir de ration',
+        ratio: '16:9',
+        isRef: false,
+        prompt: `Couloir de ration poste seuil ARA Ka-Ur. Distribution disciplinée, gardiens silhouettes, salle de confinement fond. Meme lieu que vue reference. ${BASE_STYLE}`,
+      },
+    ],
+  },
+  {
+    id: 'lieu-arsenal',
+    name: 'ARSENAL DE PROFONDEUR',
+    role: 'Enceinte des armes doctrinales',
+    location: 'Enceintes fermées',
+    images: [
+      {
+        id: 'lieu-arsenal-1',
+        label: 'Vue ensemble',
+        ratio: '16:9',
+        isRef: true,
+        prompt: `Arsenal de profondeur ARA. Volume fermé claustral. Matériaux sombres très denses, chambre d'interface, signes techniques gravés pouvoir retenu. Lumière rarissime. Sentiment gravité absolue. ${BASE_STYLE}`,
+      },
+      {
+        id: 'lieu-arsenal-2',
+        label: 'Chambre interface',
+        ratio: '16:9',
+        isRef: false,
+        prompt: `Chambre interface arsenal profondeur ARA. Tiges d'accès, matrices scellées, protocole de retenue. Chaleur contenue lumière rare. Meme lieu que vue reference. ${BASE_STYLE}`,
+      },
+    ],
+  },
+]
+
+export const ARMES = [
+  {
+    id: 'armes-terribles',
+    name: 'ARMES TERRIBLES',
+    role: 'Extrémités doctrinales — usage rarissime',
+    location: 'Arsenaux de profondeur',
+    images: [
+      {
+        id: 'arme-1',
+        label: 'Gaine minérale',
+        ratio: '16:9',
+        isRef: true,
+        prompt: `Arme terrible ARA. Gaine minérale sombre, chambre de contention, tiges d'interface gravées, matrice de focalisation. Signes techniques denses. Enceinte profonde, lumière très rare. Chaleur contenue, puissance tenue — jamais de spectacle. ${BASE_STYLE}`,
+      },
+      {
+        id: 'arme-2',
+        label: 'Arsenal rangées',
+        ratio: '16:9',
+        isRef: false,
+        prompt: `Rangées gaines armes terribles ARA arsenal profondeur. Protocole accès strict, matériaux sombres claustraux. Sentiment puissance tenue retenue absolue. Meme objets que vue reference. ${BASE_STYLE}`,
+      },
+      {
+        id: 'arme-3',
+        label: 'Interface scellée',
+        ratio: '16:9',
+        isRef: false,
+        prompt: `Interface scellée arme terrible ARA. Matrice gravée, accès protocole lourd, gravité d'installation. Lumière rarissime chaleur minime contenue. Meme objets que vue reference. ${BASE_STYLE}`,
+      },
+    ],
+  },
+]
