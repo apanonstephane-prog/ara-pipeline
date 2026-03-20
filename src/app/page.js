@@ -1,10 +1,20 @@
 'use client'
 
-import { useState, useRef, useCallback } from 'react'
+import { useState, useRef, useCallback, useEffect } from 'react'
 import { CHARACTERS, VILLES } from './data'
 
 const POLL_INTERVAL = 3000
 const MAX_POLLS = 60
+
+const LS = {
+  get: (key, fallback) => {
+    if (typeof window === 'undefined') return fallback
+    try { const v = localStorage.getItem(key); return v !== null ? JSON.parse(v) : fallback } catch { return fallback }
+  },
+  set: (key, value) => {
+    try { localStorage.setItem(key, JSON.stringify(value)) } catch {}
+  },
+}
 
 function addLog(setLogs, msg, type = 'info') {
   setLogs(prev => {
@@ -14,18 +24,25 @@ function addLog(setLogs, msg, type = 'info') {
 }
 
 export default function Page() {
-  const [apiKey, setApiKey] = useState('')
-  const [connected, setConnected] = useState(false)
-  const [phase, setPhase] = useState('characters')
-  const [images, setImages] = useState({})
-  const [refs, setRefs] = useState({})
+  const [apiKey, setApiKey] = useState(() => LS.get('ara_apiKey', ''))
+  const [connected, setConnected] = useState(() => LS.get('ara_connected', false))
+  const [phase, setPhase] = useState(() => LS.get('ara_phase', 'characters'))
+  const [images, setImages] = useState(() => LS.get('ara_images', {}))
+  const [refs, setRefs] = useState(() => LS.get('ara_refs', {}))
   const [status, setStatus] = useState({})
   const [elapsed, setElapsed] = useState({})
-  const [generated, setGenerated] = useState(0)
   const [logs, setLogs] = useState([])
 
-  const refsRef = useRef({})
-  const apiKeyRef = useRef('')
+  useEffect(() => { LS.set('ara_apiKey', apiKey) }, [apiKey])
+  useEffect(() => { LS.set('ara_connected', connected) }, [connected])
+  useEffect(() => { LS.set('ara_phase', phase) }, [phase])
+  useEffect(() => { LS.set('ara_images', images) }, [images])
+  useEffect(() => { LS.set('ara_refs', refs) }, [refs])
+
+  const generated = Object.keys(images).length
+
+  const refsRef = useRef(LS.get('ara_refs', {}))
+  const apiKeyRef = useRef(LS.get('ara_apiKey', ''))
 
   const syncRefs = (newRefs) => {
     refsRef.current = newRefs
@@ -99,7 +116,6 @@ export default function Page() {
             clearInterval(timer)
             setImages(prev => ({ ...prev, [imgId]: pollData.output }))
             setStatus(prev => ({ ...prev, [imgId]: 'done' }))
-            setGenerated(prev => prev + 1)
             addLog(setLogs, `✓ ${imgId} — succès`, 'success')
           } else if (pollData.status === 'failed' || pollData.error) {
             clearInterval(timer)
@@ -316,6 +332,12 @@ export default function Page() {
               <>
                 <span style={{ fontSize: 11, color: '#6aaa7a', letterSpacing: 1 }}>✓ CONNECTÉ</span>
                 <button style={styles.btn()} onClick={() => { setConnected(false); syncApiKey('') }}>DÉCONNECTER</button>
+                <button style={styles.btn('danger')} onClick={() => {
+                  if (confirm('Effacer toutes les images et références sauvegardées ?')) {
+                    setImages({}); setRefs({}); refsRef.current = {}
+                    addLog(setLogs, '↺ Cache effacé', 'info')
+                  }
+                }}>RESET</button>
               </>
             )}
           </div>
